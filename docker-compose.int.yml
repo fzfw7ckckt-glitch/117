@@ -1,0 +1,105 @@
+# int-main (int) — 57 tools, backend + frontend
+# Run: docker-compose -f docker-compose.int.yml up -d
+
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: int-postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: osint
+    ports:
+      - "5432:5432"
+    volumes:
+      - int_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d osint"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: int-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - int_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ./int-restored/backend
+      dockerfile: Dockerfile
+    container_name: int-api
+    environment:
+      DATABASE_URL: postgresql://admin:password@postgres:5432/osint
+      REDIS_URL: redis://redis:6379
+      SECRET_KEY: your-secret-key-change-in-production
+      CELERY_BROKER_URL: redis://redis:6379
+      CELERY_RESULT_BACKEND: redis://redis:6379
+      PYTHONUNBUFFERED: 1
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./int-restored/backend:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  celery_worker:
+    build:
+      context: ./int-restored/backend
+      dockerfile: Dockerfile
+    container_name: int-celery-worker
+    environment:
+      DATABASE_URL: postgresql://admin:password@postgres:5432/osint
+      REDIS_URL: redis://redis:6379
+      CELERY_BROKER_URL: redis://redis:6379
+      CELERY_RESULT_BACKEND: redis://redis:6379
+      PYTHONUNBUFFERED: 1
+    depends_on:
+      - postgres
+      - redis
+      - api
+    volumes:
+      - ./int-restored/backend:/app
+    command: celery -A app.tasks worker --loglevel=info
+
+  frontend:
+    build:
+      context: ./int-restored/frontend
+      dockerfile: Dockerfile
+    container_name: int-frontend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  int_postgres_data:
+  int_redis_data:

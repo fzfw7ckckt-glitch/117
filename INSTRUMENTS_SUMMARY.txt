@@ -1,0 +1,295 @@
+═══════════════════════════════════════════════════════════════════════════════
+              🛡️ OSINT PLATFORM 2026 - 57 ІНСТРУМЕНТІВ РОЗВІДКИ
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 СТАТИСТИКА
+==============
+
+Всього Інструментів:        57
+Категорій Розвідки:         9
+З API Доступом:             48 (84%)
+Без API (Локальні):         9  (16%)
+Глобальне Покриття:         ✓ (+ українські спеціалізовані)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🗂️ КАТЕГОРІЇ ТА КІЛЬКІСТЬ
+
+1. 🌍 GEOINT (Геолокація та Космічна розвідка)
+   Кількість: 8 інструментів
+   Приклади: GeoSpy.ai, Google Earth Pro, Sentinel Hub
+   ├─ Пікселева геолокація (AI)
+   ├─ Супутникові знімки (Copernicus, Google)
+   ├─ Аналіз тіней (SunCalc)
+   └─ OpenStreetMap дані (Overpass Turbo)
+
+2. 📡 SIGINT (Сигналізація та Інфраструктурна розвідка)
+   Кількість: 10 інструментів
+   Приклади: Shodan, Censys, FOFA, ZoomEye
+   ├─ IoT та мережева інфраструктура
+   ├─ TLS сертифікати та хості
+   ├─ DNS та WHOIS дані
+   └─ Малвер-аналіз (VirusTotal)
+
+3. 👥 SOCMINT/HUMINT (Соціальна та Людська розвідка)
+   Кількість: 12 інструментів
+   Приклади: Maigret, Sherlock, WhatsMyName, Telegago
+   ├─ Пошук нікнеймів (3000+ сайтів)
+   ├─ Соціальні мережі (Reddit, YouTube, Instagram)
+   ├─ Telegram аналіз
+   └─ Моніторинг брендів (Talkwalker)
+
+4. 💰 FININT (Фінансова розвідка)
+   Кількість: 8 інструментів
+   Приклади: OpenSanctions, YouControl, Kharon, RuPEP
+   ├─ Санкційні списки (2.1 млн сутностей)
+   ├─ PEP бази (РФ, Білорусь, Україна)
+   ├─ Корпоративні мережі
+   └─ Комерційні дані
+
+5. 🌐 DARKWEB (Dark Web та Витоки)
+   Кількість: 10 інструментів
+   Приклади: Ahmia, Hudson Rock, Dehashed, Intelligence X
+   ├─ Пошук у Tor мережі (.onion)
+   ├─ Витоки облікових даних
+   ├─ Пошук у paste сайтах
+   └─ Перевірка скомпрометованих email
+
+6. 📧 CONTACT (Email та Контактна розвідка)
+   Кількість: 4 інструменти
+   Приклади: Hunter.io, PhoneInfoga, Pipl
+   ├─ Email пошук за доменом
+   ├─ Розвідка за номером телефону
+   └─ Пошук людей
+
+7. 🤖 AI (AI та Агентні платформи)
+   Кількість: 4 інструменти
+   Приклади: MiniMax-M2.5, BlacksmithAI, DeepFace
+   ├─ Агентний оркестратор (197k контекст)
+   ├─ Багатоагентний пентест
+   └─ Розпізнавання облич
+
+8. 🚗 TRANSPORT (Транспорт та Трекування)
+   Кількість: 5 інструментів
+   Приклади: ADS-B Exchange, MarineTraffic, FlightAware
+   ├─ Авіатрекінг в реальному часі
+   ├─ Трекування суден (AIS)
+   └─ Історія рейсів
+
+9. 🇺🇦 UKRAINE (Українські спеціалізовані)
+   Кількість: 3 інструменти
+   Приклади: YouControl, НАЗК War & Sanctions, WarSpy
+   ├─ Українські реєстри компаній
+   ├─ Санкційні списки
+   └─ Військова телеметрія
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 ТОПОВІ ІНСТРУМЕНТИ ПО КАТЕГОРІЯХ
+
+GEOINT (Геолокація):
+  🥇 GeoSpy.ai         - Пікселева AI геолокація
+  🥈 Google Earth Pro  - Історичні супутникові знімки
+  🥉 SunCalc           - Аналіз тіней і часу
+
+SIGINT (Інфраструктура):
+  🥇 Shodan            - IoT пристрої та сервери
+  🥈 Censys            - TLS сертифікати та хости
+  🥉 SecurityTrails    - Історія DNS
+
+SOCMINT (Соціальна розвідка):
+  🥇 Maigret           - 3000+ сайтів
+  🥈 Sherlock          - Швидкий пошук
+  🥉 Telegago          - Пошук у Telegram
+
+FININT (Фінансова):
+  🥇 OpenSanctions     - 2.1 млн сутностей
+  🥈 YouControl (🇺🇦)  - Українські компанії
+  🥉 Kharon            - Корпоративні мережи
+
+DARKWEB (Витоки):
+  🥇 Have I Been Pwned - Email перевірка
+  🥈 Dehashed          - Скомпрометовані дані
+  🥉 Intelligence X    - Глобальний архів
+
+CONTACT (Контакти):
+  🥇 Hunter.io         - Email пошук
+  🥈 PhoneInfoga       - Розвідка телефонів
+  🥉 Pipl              - Пошук людей
+
+AI (Штучний інтелект):
+  🥇 MiniMax-M2.5      - 197k контекст, агентний
+  🥈 BlacksmithAI      - Багатоагентний пентест
+  🥉 Perplexity        - Координатор OSINT
+
+TRANSPORT (Трекування):
+  🥇 ADS-B Exchange    - Авіатрекінг
+  🥈 MarineTraffic     - Трекування суден
+  🥉 FlightAware       - Історія рейсів
+
+UKRAINE (Українські):
+  🥇 YouControl        - Компанії + PEP
+  🥈 НАЗК War & Sanctions - Санкції
+  🥉 WarSpy            - Військова телеметрія
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📱 ТИПОВІ СЦЕНАРІЇ ВИКОРИСТАННЯ
+
+Сценарій 1: ПОВНИЙ ПРОФІЛЬ ОСОБИ
+─────────────────────────────────
+Маршрут: Maigret → PhoneInfoga → Pipl → DeepFace → Instagram OSINT
+Результат: Нік, контакти, фото, соціальні профілі, геолокація
+
+Сценарій 2: КОМПАНІЯ І КЕРІВНИЦТВО
+──────────────────────────────────
+Маршрут: Hunter.io → YouControl → Kharon → OpenSanctions → Dun & Bradstreet
+Результат: Email, реквізити, власники, санкції, фінансові дані
+
+Сценарій 3: ТЕХНІЧНА РОЗВІДКА ІНФРАСТРУКТУРИ
+────────────────────────────────────────────
+Маршрут: Shodan → Censys → SecurityTrails → DNSDumpster → VirusTotal
+Результат: Сервери, сертифікати, DNS історія, вразливості
+
+Сценарій 4: ГЕОЛОКАЦІЯ МІСЦЕВОСТІ
+──────────────────────────────────
+Маршрут: GeoSpy.ai → Google Earth Pro → SunCalc → Overpass Turbo
+Результат: Географічні координати, час знімка, деталі місцевості
+
+Сценарій 5: ПОШУК ВИТОКІВ
+─────────────────────────
+Маршрут: Have I Been Pwned → Dehashed → Hudson Rock → Pastebin Search
+Результат: Скомпрометовані паролі, креденшали, персональні дані
+
+Сценарій 6: ПЕРЕВІРКА САНКЦІЙ (🇺🇦)
+────────────────────────────────────
+Маршрут: YouControl → OpenSanctions → RuPEP → НАЗК War & Sanctions
+Результат: Статус санкцій, PEP зв'язки, обмеження
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔌 API ДОСТУП ДО ІНСТРУМЕНТІВ
+
+Отримати всі 57 інструментів:
+$ curl http://localhost:8000/tools/
+
+Отримати статистику:
+$ curl http://localhost:8000/tools/stats
+
+Отримати категорію (GEOINT, SIGINT, SOCMINT, FININT, DARKWEB, CONTACT, AI, TRANSPORT, UKRAINE):
+$ curl http://localhost:8000/tools/category/GEOINT
+
+Пошук інструменту:
+$ curl http://localhost:8000/tools/search/shodan
+
+Запустити інструмент:
+$ curl -X POST "http://localhost:8000/tools/maigret/run?query=username"
+
+Отримати детальну інформацію:
+$ curl http://localhost:8000/tools/geospy
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 ДЕТАЛЬНІ ТАБЛИЦІ
+
+GEOINT (8):
+  1. GeoSpy.ai              - Пікселева геолокація (AI)           [API: ✓]
+  2. Picarta                - AI геолокація фото (архітектура)    [API: ✓]
+  3. EarthKit               - Геолокація за ознаками              [API: ✓]
+  4. Google Earth Pro       - Історичні супутникові знімки        [API: ✗]
+  5. Sentinel Hub           - Copernicus супутникові дані         [API: ✓]
+  6. SunCalc                - Аналіз тіней та позиції сонця       [API: ✓]
+  7. Overpass Turbo         - OpenStreetMap запити                [API: ✓]
+  8. Wikimapia              - Громадська географічна база         [API: ✓]
+
+SIGINT (10):
+  1. Shodan                 - IoT та мережева інфра               [API: ✓]
+  2. Censys                 - TLS сертифікати та хости            [API: ✓]
+  3. FOFA                   - Китайський Shodan                   [API: ✓]
+  4. ZoomEye                - Сканування пристроїв                [API: ✓]
+  5. SecurityTrails         - Історичні DNS та WHOIS              [API: ✓]
+  6. VirusTotal             - Малвер-аналіз файлів                [API: ✓]
+  7. Nmap                   - Сканування портів                   [API: ✗]
+  8. Masscan                - Масштабне сканування                [API: ✗]
+  9. DNSDumpster            - Поддомени та DNS                    [API: ✓]
+  10. BGP Looking Glass     - BGP маршрутизація                   [API: ✓]
+
+SOCMINT (12):
+  1. Maigret                - 3000+ сайтів                        [API: ✗]
+  2. Sherlock               - 400+ сайтів (швидкий)               [API: ✗]
+  3. WhatsMyName            - JSON база профілів                  [API: ✓]
+  4. Social Links           - Комерційна платформа                [API: ✓]
+  5. Babel X                - Мультимовний моніторинг             [API: ✓]
+  6. Talkwalker             - Соціальне слухання                  [API: ✓]
+  7. Hunchly                - Firefox розширення (скрін)          [API: ✗]
+  8. Telegago               - Пошук у Telegram                    [API: ✓]
+  9. OSINT Industries       - Anti-False Positive API             [API: ✓]
+  10. Reddit Search         - Пошук постів                        [API: ✓]
+  11. YouTube Search        - Пошук відео та каналів              [API: ✓]
+  12. Instagram OSINT       - Аналіз профілів                     [API: ✗]
+
+FININT (8):
+  1. OpenSanctions          - 2.1 млн санкцій                     [API: ✓]
+  2. Castellum.AI           - AI-AML та KYC                       [API: ✓]
+  3. RuPEP                  - PEP РФ та Білорусі                  [API: ✓]
+  4. YouControl             - Українські компанії (🇺🇦)           [API: ✓]
+  5. Kharon                 - Корпоративні мережи                 [API: ✓]
+  6. OCCRP Aleph            - Глобальні витоки                    [API: ✓]
+  7. Dun & Bradstreet       - Комерційні дані                     [API: ✓]
+  8. Forbes Billionaires    - База багатіїв                       [API: ✓]
+
+DARKWEB (10):
+  1. Ahmia                  - Пошук .onion сайтів                 [API: ✓]
+  2. OnionLand              - Tor мережа індекс                   [API: ✓]
+  3. DarkSearch.io          - Dark web paste                      [API: ✓]
+  4. Hudson Rock            - Витоки від взлому                   [API: ✓]
+  5. Intelligence X         - Deep/dark архів                     [API: ✓]
+  6. Dehashed               - Скомпрометовані дані                [API: ✓]
+  7. Have I Been Pwned      - Email на витоки                     [API: ✓]
+  8. SpyCloud               - Пост-інфекційні дані                [API: ✓]
+  9. Pastebin Search        - Пошук утікань                       [API: ✓]
+  10. WasteBin              - Додатковий paste пошук              [API: ✓]
+
+CONTACT (4):
+  1. Hunter.io              - Email за доменом                    [API: ✓]
+  2. PhoneInfoga v2         - Розвідка телефонів (Go)             [API: ✓]
+  3. Pipl                   - Пошук людей                         [API: ✓]
+  4. ReversePhoneLookup     - Зворотний телефон пошук             [API: ✓]
+
+AI (4):
+  1. MiniMax-M2.5           - Агентний оркестратор (197k)         [API: ✓]
+  2. BlacksmithAI           - Багатоагентний пентест              [API: ✓]
+  3. Perplexity Computer    - AI координатор                      [API: ✓]
+  4. DeepFace               - Розпізнавання облич                 [API: ✗]
+
+TRANSPORT (5):
+  1. ADS-B Exchange         - Авіатрекінг                         [API: ✓]
+  2. MarineTraffic          - AIS трекування суден                [API: ✓]
+  3. VesselFinder           - Альтернативний суднотрекер          [API: ✓]
+  4. OpenRailwayMap         - Залізничні мережи                   [API: ✓]
+  5. FlightAware            - Історія рейсів                      [API: ✓]
+
+UKRAINE (3):
+  1. CE Poshuk Bot          - Українські реєстри (Telegram)       [API: ✓]
+  2. WarSpy                 - Військова телеметрія                [API: ✓]
+  3. НАЗК War & Sanctions   - Санкційний портал (🇺🇦)              [API: ✓]
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ СТАТУС РОЗГОРТАННЯ
+
+Платформа повністю розгорнута з 57 інтегрованими інструментами:
+✓ FastAPI backend запущено
+✓ Next.js frontend доступний
+✓ PostgreSQL готова до роботи
+✓ Redis кешування активне
+✓ Celery воркер обробляє задачі
+✓ Всі API роути функціональні
+✓ Каталог інструментів завантажений
+
+Доступ до платформи:
+🌐 Frontend: http://localhost:3000
+🔌 API: http://localhost:8000
+📖 Документація: http://localhost:8000/docs
+
+═══════════════════════════════════════════════════════════════════════════════
